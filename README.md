@@ -1,0 +1,1 @@
+This is TeshyP's DOM (Javascript, html, css) practice project
