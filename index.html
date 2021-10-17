@@ -19,17 +19,22 @@
 <h1> Etch-a-Sketch </h1>   
 <p id="wiki-info"> The Etch A Sketch was introduced near the peak of the Baby Boom on 12 July 1960 for $2.99 (equivalent to $26 in 2021). It went on to sell 600,000 units that year and is one of the best known toys of that era. </p>
 
-<label for="gridNo"> No of grids: <output id="output">   X </output> </label>
-<input id="gridNo" type="range" name="gridNo" min="2" max="30" value="16">
+<label for="gridNo"> Grid : <output id="output">   X </output> </label>
+<input id="gridNo" type="range" name="gridNo" min="2" max="16" value="16">
 
 
 <div id="btns"> 
-<button class="clr-btn mode-btn"> Color Mode </button>
-<button class="matrix-btn mode-btn"> Matrix Mode </button>
-<button class="psy-btn mode-btn"> Psychedleic Mode </button>
-    <div id="restart-btns">
-        <button class="eraser-btn restart-btn"> Eraser </button>
-        <button class="reset-btn restart-btn"> Reset </button>
+
+<div id="color-div"> 
+<input type="color" id="colorpicker" value="#0000FF">
+<button id="clr-btn"> Brush Mode </button>
+</div>
+
+<button id="psy-btn"> Psychedleic Mode </button>
+    
+<div id="restart-btns">
+        <button id="eraser-btn" class="restart-btn"> Eraser </button>
+        <button id="reset-btn" class="restart-btn"> Reset </button>
     </div>
 </div>
 
