@@ -5,6 +5,9 @@ const output = document.getElementById("output");
 const gameContainer = document.getElementById("game-container")
 const resetBtn = document.getElementById("reset-btn");
 const divsToRemove = document.getElementsByClassName("newDivs");
+// const eraserBtn = document.getElementById("eraser-btn");
+const psyBtn = document.getElementById("psy-btn");
+// const brushBtn = document.getElementById("clr-btn");
 // let colorPicker = document.getElementById("colorpicker").value;
 
 // Slider bar update and generate grids on board
@@ -26,7 +29,11 @@ function generateGameBoard() {
         const newDiv = document.createElement("div");
         newDiv.classList.add("newDivs");
         document.getElementById("game-container").appendChild(newDiv);
-        newDiv.addEventListener("mouseover", brushMode);
+
+        // ADD function or IF - if brush is clicked then burshMode is Psy is clicked Psych mode.
+        newDiv.addEventListener("mouseover", psychMode);
+        //newDiv.addEventListener("mouseover", brushMode);
+
     }
 
 };
@@ -61,6 +68,7 @@ function psychMode() {
 // event listeners
 gridInput.forEach(input => input.addEventListener("change", displayNoOfGrids));
 resetBtn.addEventListener("click", resetGrid);
+psyBtn.addEventListener("click", psychMode);
 
 
 
