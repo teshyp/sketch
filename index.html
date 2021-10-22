@@ -5,21 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
-    <title> Etch-a-Sketch </title>
+    <link href="http://fonts.cdnfonts.com/css/matrix" rel="stylesheet">
+    <title> The Etch-a-Sketch </title>
 
 </head>
 <body>
+    
+    <div id="main-container"> 
 
- 
-
-<div id="main-container"> 
-
+        <header>
+        <h2> THE <h2>
+        <h1> ETCH-A-SKETCH </h1>   
+      </header>
+        
+    
+    <div id="sub-container"> 
 <div id="controller"> 
 
-<h1> Etch-a-Sketch </h1>   
+<p class="intro-p"> Be careful <span id="playerName" class="intro-p"> </span>. They are watching you. </p>
+<p class="intro-p"> Quickly select the number of grids </p>
+<p class="intro-p"> and the mode you wish to enter. </p>
 
 <label for="gridNo"> Grid : <output id="output"> move slider </output> </label>
-<input id="gridNo" type="range" name="gridNo" min="2" max="16" value="16">
+<input id="gridNo" type="range" name="gridNo" min="2" max="30" value="30">
 
 
 <div id="btns"> 
@@ -41,9 +49,9 @@
 </div>
 
 <div id="game-container">
-
-
 </div>
+
+
 
 </body>
 

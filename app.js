@@ -9,6 +9,8 @@ const eraserBtn = document.getElementById("eraser-btn");
 const psyBtn = document.getElementById("psy-btn");
 const brushBtn = document.getElementById("clr-btn");
 //let colorPicker = document.getElementById("colorpicker").value;
+let playerName = prompt("Hello, please enter your name")
+document.getElementById("playerName").innerHTML = `${playerName}`
 
 // Restart game/clean board - Brush mode
 function resetGrid() {
@@ -16,6 +18,8 @@ function resetGrid() {
         divsToRemove[i].remove();
     }
 };
+
+
 
 // Generate game grids
 function generateGameBoardBrushMode() {
@@ -34,7 +38,7 @@ function generateGameBoardBrushMode() {
         eraserBtn.addEventListener("click", eraser)
         function eraser() {
             newDiv.addEventListener("mouseover", function () {
-                this.style.backgroundColor = "#FFFFFF";
+                this.style.backgroundColor = "rgba(175, 255, 207, 0.954)";
             });
         };
     }
