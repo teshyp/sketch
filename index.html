@@ -19,14 +19,16 @@
       </header>
         
     
-    <div id="sub-container"> 
-<div id="controller"> 
+<div id="sub-container"> 
 
-<p class="intro-p"> Be careful <span id="playerName" class="intro-p"> </span>. They are watching you. </p>
+    <div id="controller"> 
+
+<p class="intro-p"> Be careful <span id="playerName" class="intro-p"> </span>. </p>
+<p class="intro-p"> They are watching you. </p>
 <p class="intro-p"> Quickly select the number of grids </p>
 <p class="intro-p"> and the mode you wish to enter. </p>
 
-<label for="gridNo"> Grid : <output id="output"> move slider </output> </label>
+<label for="gridNo" id="grid-selector-text"> Grid : <output id="output"> move slider </output> </label>
 <input id="gridNo" type="range" name="gridNo" min="2" max="30" value="30">
 
 
@@ -36,14 +38,14 @@
 <input type="color" id="colorpicker" value="#0000FF">
 <button id="clr-btn"> Brush Mode </button>
 </div>
-
-<button id="psy-btn"> Psychedleic Mode </button>
-    
 <div id="restart-btns">
         <button id="eraser-btn" class="restart-btn"> Eraser </button>
         <button id="reset-btn" class="restart-btn"> Reset </button>
     </div>
 </div>
+
+<button id="psy-btn"> Psychedleic Mode </button>
+    
 
 
 </div>
