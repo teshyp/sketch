@@ -1,6 +1,6 @@
 const mainArea = document.getElementById("game-container");
 //const newDiv = document.createElement("div");
-const gridInput = document.querySelectorAll("input");
+const gridInput = document.getElementById("gridNo");
 const output = document.getElementById("output");
 const gameContainer = document.getElementById("game-container")
 const resetBtn = document.getElementById("reset-btn");
@@ -18,7 +18,7 @@ function resetGrid() {
 };
 
 // Generate game grids
-function generateGameBoard() {
+function generateGameBoardBrushMode() {
 
     resetGrid()
     document.getElementById("output").innerText = gridNo.value;
@@ -31,48 +31,65 @@ function generateGameBoard() {
         newDiv.classList.add("newDivs");
         document.getElementById("game-container").appendChild(newDiv);
         newDiv.addEventListener("mouseover", clrPickermMode);
-        //newDiv.addEventListener("mouseover", psychMode);
+        eraserBtn.addEventListener("click", eraser)
+        function eraser() {
+            newDiv.addEventListener("mouseover", function () {
+                this.style.backgroundColor = "#FFFFFF";
+            });
+        };
     }
+};
+
+// Generate game grids - psych mode
+function generateGameBoardPsychMode() {
+
+    resetGrid()
+    document.getElementById("output").innerText = gridNo.value;
+
+    for (let i = 0;i < parseInt(output.value * output.value);i++) {
+
+        gameContainer.style.gridTemplateColumns = `repeat(${output.value}, 1fr)`
+        gameContainer.style.gridTemplateRows = `repeat(${output.value}, 1fr)`
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("newDivs");
+        document.getElementById("game-container").appendChild(newDiv);
+        //newDiv.addEventListener("mouseover", clrPickermMode);
+        newDiv.addEventListener("mouseover", psychMode);
+        eraserBtn.addEventListener("click", eraser)
+        function eraser() {
+            newDiv.addEventListener("mouseover", function () {
+                this.style.backgroundColor = "#FFFFFF";
+            });
+        };
+    };
 };
 
 
 // Eraser mode 
-function eraser() {
-    event.target.style.backgroundColor = "#FFFFFF";
-};
 
 
 // Brush mode - change color of div
 function clrPickermMode() {
     let colorPicker = document.getElementById("colorpicker").value;
-    eraserBtn.addEventListener("mouseover", eraser);
     event.target.style.backgroundColor = `${colorPicker}`;
 };
 
 
 // Psychedelic mode
 function psychMode() {
-    document.getElementsByClassName("newDivs").addEventListener("mouseover", psyDiv);
-    function psyDiv() {
-        randomColorVal = Math.floor(Math.random() * 16777215).toString(16);
-        event.target.style.backgroundColor = `${"#" + randomColorVal}`;
-    }
+    randomColorVal = Math.floor(Math.random() * 16777215).toString(16);
+    event.target.style.backgroundColor = `${"#" + randomColorVal}`;
 };
 
 
 // event listeners
-gridInput.forEach(input => input.addEventListener("change", generateGameBoard));
+//gridInput.forEach(input => input.addEventListener("change", generateGameBoard));
 
-
+gridInput.addEventListener("change", generateGameBoardBrushMode);
+psyBtn.addEventListener("click", generateGameBoardPsychMode);
 resetBtn.addEventListener("click", resetGrid);
 
 
 // -- TO DO --
-// Single Color Mode
-// Psychedlic Mode
 // Eraser feature
 
-// Load page
-// reset grid 
-// Default mode - paint with color picker
-// 
