@@ -42,7 +42,31 @@ header h2 {
 
 #gridNo {
     width: 245px;
+    height: 0.5rem;
+    border: rgb(0, 0, 0) solid 1px;
+    border-radius: 0.3rem;
     margin: 0rem 0rem 1rem 0rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgb(255, 255, 255);
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#gridNo:hover {
+    opacity: 1;
+    border: rgb(42, 198, 42) solid 1px;
+}
+
+#gridNo::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.1rem;
+    width: 0.7rem;
+    height: 25px;
+    background-color: rgb(87, 216, 87);
 }
 
 #output {
@@ -112,6 +136,10 @@ header h2 {
     border-radius: 0.2rem;
 }
 
+#playerName {
+    color: rgba(175, 255, 207, 0.954);
+    font-weight: bold;
+}
 
 #psy-btn,
 #clr-btn {
@@ -155,7 +183,7 @@ button {
     box-sizing: border-box;
     color: #000000;
     text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
-    background-color: #FFFFFF;
+    background-color: #ffffffee;
     transition: all 0.15s;
 }
 
@@ -164,5 +192,11 @@ button:hover {
     font-weight: bolder;
     border: rgb(42, 198, 42) solid 2px;
     color: #149d08;
+    background-color: #FFFFFF;
+}
 
+#reset-btn:hover {
+    border: rgb(198, 42, 42) solid 2px;
+    color: white;
+    background-color: rgba(232, 122, 122, 0.968);
 }
