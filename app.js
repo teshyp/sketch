@@ -1,7 +1,5 @@
 const mainArea = document.getElementById("game-container");
-//const newDiv = document.createElement("div");
 const gridInput = document.getElementById("gridNo");
-const output = document.getElementById("output");
 const gameContainer = document.getElementById("game-container")
 const resetBtn = document.getElementById("reset-btn");
 const divsToRemove = document.getElementsByClassName("newDivs");
@@ -9,7 +7,7 @@ const eraserBtn = document.getElementById("eraser-btn");
 const psyBtn = document.getElementById("psy-btn");
 const brushBtn = document.getElementById("clr-btn");
 //let colorPicker = document.getElementById("colorpicker").value;
-let playerName = prompt("Hello, please enter your name")
+let playerName = prompt("Hello, please enter your name", "Player")
 document.getElementById("playerName").innerHTML = `${playerName}`
 
 // Restart game/clean board - Brush mode
@@ -57,12 +55,11 @@ function generateGameBoardPsychMode() {
         const newDiv = document.createElement("div");
         newDiv.classList.add("newDivs");
         document.getElementById("game-container").appendChild(newDiv);
-        //newDiv.addEventListener("mouseover", clrPickermMode);
         newDiv.addEventListener("mouseover", psychMode);
         eraserBtn.addEventListener("click", eraser)
         function eraser() {
             newDiv.addEventListener("mouseover", function () {
-                this.style.backgroundColor = "#FFFFFF";
+                this.style.backgroundColor = " rgba(175, 255, 207, 0.954)";
             });
         };
     };
@@ -91,6 +88,7 @@ function psychMode() {
 
 gridInput.addEventListener("change", generateGameBoardBrushMode);
 psyBtn.addEventListener("click", generateGameBoardPsychMode);
+brushBtn.addEventListener("click", generateGameBoardBrushMode)
 resetBtn.addEventListener("click", resetGrid);
 
 
